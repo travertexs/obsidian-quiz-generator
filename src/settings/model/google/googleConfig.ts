@@ -10,6 +10,6 @@ export interface GoogleConfig {
 export const DEFAULT_GOOGLE_SETTINGS: GoogleConfig = {
 	googleApiKey: "",
 	googleBaseURL: "https://generativelanguage.googleapis.com",
-	googleTextGenModel: GoogleTextGenModel.GEMINI_2_0_FLASH,
+	googleTextGenModel: GoogleTextGenModel.GEMINI_2_5_FLASH,
 	googleEmbeddingModel: GoogleEmbeddingModel.TEXT_EMBEDDING_004,
 };
