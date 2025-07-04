@@ -105,7 +105,7 @@ export default class SelectorModal extends Modal {
 
 			try {
 				new Notice("Generating...");
-				const generator = GeneratorFactory.createInstance(this.settings);
+				const generator = GeneratorFactory.createTextGenerationInstance(this.settings);
 				const generatedQuestions = await generator.generateQuiz([...this.selectedNotes.values()]);
 				if (generatedQuestions === null) {
 					this.toggleButtons([SelectorModalButton.GENERATE], false);

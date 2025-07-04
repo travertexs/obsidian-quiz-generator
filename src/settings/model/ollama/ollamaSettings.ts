@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { DEFAULT_OLLAMA_SETTINGS } from "./ollamaConfig";
 import { getOllamaEmbeddingModels, getOllamaTextGenModels } from "../../../generators/ollama/ollamaModels";
 
-const displayOllamaSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayOllamaProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Ollama API base url")
 		.setDesc("Enter your Ollama API base URL here.")
@@ -26,7 +26,9 @@ const displayOllamaSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayOllamaTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -52,7 +54,9 @@ const displayOllamaSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 				})
 				.setDisabled(noModelsAvailable);
 		});
+};
 
+export const displayOllamaEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Embedding model")
 		.setDesc("Model used for evaluating short and long answer questions.")
@@ -79,5 +83,3 @@ const displayOllamaSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 				.setDisabled(noModelsAvailable);
 		});
 };
-
-export default displayOllamaSettings;

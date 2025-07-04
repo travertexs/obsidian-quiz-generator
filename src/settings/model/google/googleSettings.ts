@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { googleEmbeddingModels, googleTextGenModels } from "../../../generators/google/googleModels";
 import { DEFAULT_GOOGLE_SETTINGS } from "./googleConfig";
 
-const displayGoogleSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayGoogleProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Google API key")
 		.setDesc("Enter your Google API key here.")
@@ -38,7 +38,9 @@ const displayGoogleSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayGoogleTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -51,7 +53,9 @@ const displayGoogleSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayGoogleEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Embedding model")
 		.setDesc("Model used for evaluating short and long answer questions.")
@@ -65,5 +69,3 @@ const displayGoogleSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 				})
 		);
 };
-
-export default displayGoogleSettings;

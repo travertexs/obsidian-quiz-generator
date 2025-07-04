@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { openAIEmbeddingModels, openAITextGenModels } from "../../../generators/openai/openAIModels";
 import { DEFAULT_OPENAI_SETTINGS } from "./openAIConfig";
 
-const displayOpenAISettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayOpenAIProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("OpenAI API key")
 		.setDesc("Enter your OpenAI API key here.")
@@ -38,7 +38,9 @@ const displayOpenAISettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayOpenAITextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -51,7 +53,9 @@ const displayOpenAISettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayOpenAIEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Embedding model")
 		.setDesc("Model used for evaluating short and long answer questions.")
@@ -65,5 +69,3 @@ const displayOpenAISettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 				})
 		);
 };
-
-export default displayOpenAISettings;

@@ -9,10 +9,14 @@ import { DEFAULT_OLLAMA_SETTINGS, OllamaConfig } from "./ollama/ollamaConfig";
 
 export interface ModelConfig extends OpenAIConfig, GoogleConfig, AnthropicConfig, PerplexityConfig, MistralConfig, CohereConfig, OllamaConfig {
 	provider: string;
+	textProvider: string;
+	embeddingProvider: string;
 }
 
 export const DEFAULT_MODEL_SETTINGS: ModelConfig = {
 	provider: Provider.OPENAI,
+	textProvider: Provider.OPENAI,
+	embeddingProvider: Provider.OPENAI,
 	...DEFAULT_OPENAI_SETTINGS,
 	...DEFAULT_GOOGLE_SETTINGS,
 	...DEFAULT_ANTHROPIC_SETTINGS,

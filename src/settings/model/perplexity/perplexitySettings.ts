@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { perplexityTextGenModels } from "../../../generators/perplexity/perplexityModels";
 import { DEFAULT_PERPLEXITY_SETTINGS } from "./perplexityConfig";
 
-const displayPerplexitySettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayPerplexityProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Perplexity API key")
 		.setDesc("Enter your Perplexity API key here.")
@@ -38,7 +38,9 @@ const displayPerplexitySettings = (containerEl: HTMLElement, plugin: QuizGenerat
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayPerplexityTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -53,4 +55,6 @@ const displayPerplexitySettings = (containerEl: HTMLElement, plugin: QuizGenerat
 		);
 };
 
-export default displayPerplexitySettings;
+export const displayPerplexityEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+
+};

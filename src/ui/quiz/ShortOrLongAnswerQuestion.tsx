@@ -40,7 +40,7 @@ const ShortOrLongAnswerQuestion = ({ app, question, settings }: ShortOrLongAnswe
 		try {
 			setStatus("evaluating");
 			new Notice("Evaluating answer...");
-			const generator = GeneratorFactory.createInstance(settings);
+			const generator = GeneratorFactory.createEmbeddingInstance(settings);
 			const similarity = await generator.shortOrLongAnswerSimilarity(input.trim(), question.answer);
 			const similarityPercentage = Math.round(similarity * 100);
 			if (similarityPercentage >= 80) {

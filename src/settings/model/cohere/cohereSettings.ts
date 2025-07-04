@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { cohereEmbeddingModels, cohereTextGenModels } from "../../../generators/cohere/cohereModels";
 import { DEFAULT_COHERE_SETTINGS } from "./cohereConfig";
 
-const displayCohereSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayCohereProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Cohere API key")
 		.setDesc("Enter your Cohere API key here.")
@@ -38,7 +38,9 @@ const displayCohereSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayCohereTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -51,7 +53,9 @@ const displayCohereSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayCohereEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Embedding model")
 		.setDesc("Model used for evaluating short and long answer questions.")
@@ -65,5 +69,3 @@ const displayCohereSettings = (containerEl: HTMLElement, plugin: QuizGenerator, 
 				})
 		);
 };
-
-export default displayCohereSettings;

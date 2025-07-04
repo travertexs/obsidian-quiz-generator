@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { mistralEmbeddingModels, mistralTextGenModels } from "../../../generators/mistral/mistralModels";
 import { DEFAULT_MISTRAL_SETTINGS} from "./mistralConfig";
 
-const displayMistralSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayMistralProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Mistral API key")
 		.setDesc("Enter your Mistral API key here.")
@@ -38,7 +38,9 @@ const displayMistralSettings = (containerEl: HTMLElement, plugin: QuizGenerator,
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayMistralTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -51,7 +53,9 @@ const displayMistralSettings = (containerEl: HTMLElement, plugin: QuizGenerator,
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayMistralEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Embedding model")
 		.setDesc("Model used for evaluating short and long answer questions.")
@@ -65,5 +69,3 @@ const displayMistralSettings = (containerEl: HTMLElement, plugin: QuizGenerator,
 				})
 		);
 };
-
-export default displayMistralSettings;

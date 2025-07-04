@@ -20,8 +20,14 @@ export default class GeneratorFactory {
 		[Provider.OLLAMA]: OllamaGenerator,
 	};
 
-	public static createInstance(settings: QuizSettings): Generator {
-		const provider = Provider[settings.provider as keyof typeof Provider];
+	public static createTextGenerationInstance(settings: QuizSettings): Generator {
+		const provider = Provider[settings.textProvider as keyof typeof Provider];
+		const GeneratorConstructor = this.generatorMap[provider];
+		return new GeneratorConstructor(settings);
+	}
+
+	public static createEmbeddingInstance(settings: QuizSettings): Generator {
+		const provider = Provider[settings.embeddingProvider as keyof typeof Provider];
 		const GeneratorConstructor = this.generatorMap[provider];
 		return new GeneratorConstructor(settings);
 	}

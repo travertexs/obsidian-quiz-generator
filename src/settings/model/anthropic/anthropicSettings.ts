@@ -3,7 +3,7 @@ import QuizGenerator from "../../../main";
 import { anthropicTextGenModels } from "../../../generators/anthropic/anthropicModels";
 import { DEFAULT_ANTHROPIC_SETTINGS } from "./anthropicConfig";
 
-const displayAnthropicSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+export const displayAnthropicProviderSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Anthropic API key")
 		.setDesc("Enter your Anthropic API key here.")
@@ -38,7 +38,9 @@ const displayAnthropicSettings = (containerEl: HTMLElement, plugin: QuizGenerato
 					await plugin.saveSettings();
 				})
 		);
+};
 
+export const displayAnthropicTextModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
 	new Setting(containerEl)
 		.setName("Generation model")
 		.setDesc("Model used for quiz generation.")
@@ -53,4 +55,6 @@ const displayAnthropicSettings = (containerEl: HTMLElement, plugin: QuizGenerato
 		);
 };
 
-export default displayAnthropicSettings;
+export const displayAnthropicEmbeddingModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+
+};
