@@ -15,7 +15,7 @@ export const googleTextGenModels: Record<GoogleTextGenModel, string> = {
 	[GoogleTextGenModel.GEMINI_2_0_FLASH]: "Gemini 2.0 Flash",
 	[GoogleTextGenModel.GEMINI_2_5_FLASH_LITE]: "Gemini 2.5 Flash-Lite",
 	[GoogleTextGenModel.GEMINI_2_5_FLASH]: "Gemini 2.5 Flash",
-	[GoogleTextGenModel.GEMINI_2_5_PRO]: "Gemini 2.5 Pro Preview",
+	[GoogleTextGenModel.GEMINI_2_5_PRO]: "Gemini 2.5 Pro",
 };
 
 export const enum GoogleEmbeddingModel {
