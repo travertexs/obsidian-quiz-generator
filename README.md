@@ -25,6 +25,7 @@ https://github.com/user-attachments/assets/22770da4-af69-412c-ae05-1aae0fff4a10
 
 - [OpenAI](https://openai.com/): Advanced models for high-quality question generation.
 - [Google](https://ai.google.dev/): Free to use with the largest context window for handling extensive notes.
+- [xAI](https://x.ai/): Optimized for thoughtful and contextually aware outputs.
 - [Anthropic](https://www.anthropic.com/): Optimized for thoughtful and contextually aware outputs.
 - [Perplexity](https://www.perplexity.ai/): Fine-tuned LLaMA models for robust question generation.
 - [Mistral](https://mistral.ai/): Lightweight models for fast and efficient processing.
