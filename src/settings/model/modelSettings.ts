@@ -12,6 +12,11 @@ import {
 	displayGoogleEmbeddingModelSettings,
 } from "./google/googleSettings";
 import {
+	displayXAIProviderSettings,
+	displayXAITextModelSettings,
+	displayXAIEmbeddingModelSettings,
+} from "./xai/xAISettings";
+import {
 	displayAnthropicProviderSettings,
 	displayAnthropicTextModelSettings,
 	displayAnthropicEmbeddingModelSettings,
@@ -60,6 +65,9 @@ export const displayProviderSettings = (containerEl: HTMLElement, plugin: QuizGe
 		case Provider.GOOGLE:
 			displayGoogleProviderSettings(containerEl, plugin, refreshSettings);
 			break;
+		case Provider.XAI:
+			displayXAIProviderSettings(containerEl, plugin, refreshSettings);
+			break;
 		case Provider.ANTHROPIC:
 			displayAnthropicProviderSettings(containerEl, plugin, refreshSettings);
 			break;
@@ -104,6 +112,9 @@ export const displayTextModelSettings = (containerEl: HTMLElement, plugin: QuizG
 		case Provider.GOOGLE:
 			displayGoogleTextModelSettings(containerEl, plugin, refreshSettings);
 			break;
+		case Provider.XAI:
+			displayXAITextModelSettings(containerEl, plugin, refreshSettings);
+			break;
 		case Provider.ANTHROPIC:
 			displayAnthropicTextModelSettings(containerEl, plugin, refreshSettings);
 			break;
@@ -147,6 +158,9 @@ export const displayEmbeddingModelSettings = (containerEl: HTMLElement, plugin: 
 			break;
 		case Provider.GOOGLE:
 			displayGoogleEmbeddingModelSettings(containerEl, plugin, refreshSettings);
+			break;
+		case Provider.XAI:
+			displayXAIEmbeddingModelSettings(containerEl, plugin, refreshSettings);
 			break;
 		case Provider.ANTHROPIC:
 			displayAnthropicEmbeddingModelSettings(containerEl, plugin, refreshSettings);

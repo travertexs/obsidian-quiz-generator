@@ -1,6 +1,7 @@
 export enum Provider {
 	OPENAI = "OPENAI",
 	GOOGLE = "GOOGLE",
+	XAI = "XAI",
 	ANTHROPIC = "ANTHROPIC",
 	PERPLEXITY = "PERPLEXITY",
 	MISTRAL = "MISTRAL",
@@ -11,6 +12,7 @@ export enum Provider {
 export const providers: Record<Provider, string> = {
 	[Provider.OPENAI]: "OpenAI",
 	[Provider.GOOGLE]: "Google",
+	[Provider.XAI]: "xAI",
 	[Provider.ANTHROPIC]: "Anthropic",
 	[Provider.PERPLEXITY]: "Perplexity",
 	[Provider.MISTRAL]: "Mistral",
