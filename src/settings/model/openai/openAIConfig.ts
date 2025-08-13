@@ -10,6 +10,6 @@ export interface OpenAIConfig {
 export const DEFAULT_OPENAI_SETTINGS: OpenAIConfig = {
 	openAIApiKey: "",
 	openAIBaseURL: "https://api.openai.com/v1",
-	openAITextGenModel: OpenAITextGenModel.GPT_4_1_MINI,
+	openAITextGenModel: OpenAITextGenModel.GPT_5_MINI,
 	openAIEmbeddingModel: OpenAIEmbeddingModel.TEXT_EMBEDDING_3_SMALL,
 };
