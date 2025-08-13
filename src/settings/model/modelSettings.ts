@@ -50,15 +50,15 @@ export const displayProviderSettings = (containerEl: HTMLElement, plugin: QuizGe
 		.addDropdown(dropdown =>
 			dropdown
 				.addOptions(providers)
-				.setValue(plugin.settings.provider)
+				.setValue(plugin.settings.displayedProvider)
 				.onChange(async (value) => {
-					plugin.settings.provider = value;
+					plugin.settings.displayedProvider = value;
 					await plugin.saveSettings();
 					refreshSettings();
 				})
 		);
 
-	switch (plugin.settings.provider){
+	switch (plugin.settings.displayedProvider){
 		case Provider.OPENAI:
 			displayOpenAIProviderSettings(containerEl, plugin, refreshSettings);
 			break;

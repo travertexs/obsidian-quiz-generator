@@ -12,12 +12,14 @@ export interface ModelConfig extends OpenAIConfig, GoogleConfig, xAIConfig, Anth
 	provider: string;
 	textProvider: string;
 	embeddingProvider: string;
+	displayedProvider: string;
 }
 
 export const DEFAULT_MODEL_SETTINGS: ModelConfig = {
 	provider: Provider.OPENAI,
 	textProvider: Provider.OPENAI,
 	embeddingProvider: Provider.OPENAI,
+	displayedProvider: Provider.OPENAI,
 	...DEFAULT_OPENAI_SETTINGS,
 	...DEFAULT_GOOGLE_SETTINGS,
 	...DEFAULT_XAI_SETTINGS,
